@@ -1,0 +1,13 @@
+{
+    "name": "com.nox7atra.anim-curve-to-tex",
+    "version": "1.0.0",
+    "displayName": "Animation Curve To Tex",
+    "description": "Перевод Unity кривой анимации в текстуру",
+    "unity": "2021.3",
+    "unityRelease": "1f1",
+    "author": {
+        "name": "nox7atra",
+        "email": "dyadichenkoga@yandex.ru",
+        "url": "noxatra.ru"
+    }
+}
