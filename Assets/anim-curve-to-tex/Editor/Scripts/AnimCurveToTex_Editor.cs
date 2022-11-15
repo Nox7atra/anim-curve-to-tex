@@ -10,13 +10,12 @@ namespace Nox7atra
     {
         private AnimCurveToTex _target;
         private SerializedProperty _material;
-        private SerializedProperty _materialName;
+        private SerializedProperty _texturePropertyName;
         
         public void OnEnable()
         {
             _material = serializedObject.FindProperty("_targetMaterial");
-            _materialName = serializedObject.FindProperty("_materialName");
-
+            _texturePropertyName = serializedObject.FindProperty("_texturePropertyName");
         }
 
         public override void OnInspectorGUI()
@@ -25,13 +24,13 @@ namespace Nox7atra
             var matNames = GetMaterialPropertyNames();
             if (matNames != null)
             {
-                var index = matNames.IndexOf(_materialName.stringValue);
+                var index = matNames.IndexOf(_texturePropertyName.stringValue);
                 if (index < 0)
                 {
                     index = 0;
                 }
-                _materialName.stringValue = matNames[EditorGUILayout.Popup(index, matNames.ToArray())];
-                _materialName.serializedObject.ApplyModifiedProperties();
+                _texturePropertyName.stringValue = matNames[EditorGUILayout.Popup(index, matNames.ToArray())];
+                _texturePropertyName.serializedObject.ApplyModifiedProperties();
             }
         }
 
@@ -57,6 +56,4 @@ namespace Nox7atra
             return materialPropertyNames;
         }
     }
-    
- 
 }
